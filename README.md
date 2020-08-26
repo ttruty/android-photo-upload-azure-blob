@@ -1,7 +1,6 @@
 ---
-services: storage
-platforms: android
-author: pcibraro
+Modified from https://github.com/Azure-Samples/storage-blob-android-photo-uploader
+to use SAS
 ---
 
 # Azure Storage Service - Photo Uploader Sample for Android
@@ -15,11 +14,8 @@ as you will be creating and deleting actual blobs.
 ## Running this sample
 
 1. Open the solution with Android Studio.
-2. Open the ImageManager.java file and change the "[ACCOUNT_NAME]" and "[ACCOUNT_KEY]" in the storageConnectionString variable with account and key provided in the Azure Portal. 
-
-> **WARNING:**
-> **Only use Shared Key authentication for testing purposes!** Your account name and account key, which give full read/write access to the associated Storage account, will be distributed to every person that downloads your app. This is **not** a good practice as you risk having your key compromised by untrusted clients. Please consult following documents to understand and use Shared Access Signatures instead. https://docs.microsoft.com/en-us/rest/api/storageservices/delegating-access-with-a-shared-access-signature and https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1
->
+2. Connection credentials need to be in a ```connection.properties``` file at root
+> CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=XXXXXXX;AccountKey=XXXXXXXXXXXX;EndpointSuffix=core.windows.net"
 
 ## More information
 - [What is a Storage Account](http://azure.microsoft.com/en-us/documentation/articles/storage-whatis-account/)
