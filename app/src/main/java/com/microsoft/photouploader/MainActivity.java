@@ -20,8 +20,10 @@ package com.microsoft.photouploader;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             final Handler handler = new Handler();
 
             Thread th = new Thread(new Runnable() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 public void run() {
 
                     try {
@@ -122,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
+        //TODO Set json to Azure sql
+        String url="jdbc:mysql:";//$AZ_DATABASE_NAME.mysql.database.azure.com:3306/demo?serverTimezone=UTC
+        String user="demo@$AZ_DATABASE_NAME";
+        String password="$AZ_MYSQL_PASSWORD";
     }
 
     @Override

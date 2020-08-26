@@ -39,9 +39,14 @@
             android:id="@+id/Show" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_gallery"
-            android:id="@+id/imageView" />
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
     </LinearLayout>
 </RelativeLayout>
